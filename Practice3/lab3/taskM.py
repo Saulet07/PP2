@@ -14,6 +14,6 @@ if res:
     for i in res:
         print(i, end=" ")
 else:
-    print("No")
+    print("No primes")
 
 

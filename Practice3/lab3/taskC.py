@@ -1,7 +1,7 @@
 s = input()
 
 words = {
-    "ZERO": "0",
+    "ZER": "0",
     "ONE": "1",
     "TWO": "2",
     "THR": "3",
@@ -43,7 +43,7 @@ else:
 answer = ""
 for digit in str(result):
     if digit == "0":
-        answer += "ZERO"
+        answer += "ZER"
     elif digit == "1":
         answer += "ONE"
     elif digit == "2":

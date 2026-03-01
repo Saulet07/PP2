@@ -10,5 +10,3 @@ class Account:
 B, W = map(int, input().split())
 p1 = Account(W, B)
 print(p1.show())
-    
-        
