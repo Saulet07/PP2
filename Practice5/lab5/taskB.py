@@ -5,4 +5,4 @@ text = re.search(a, s)
 if text:
     print("Yes")
 else:
-    print("NO")
+    print("No")

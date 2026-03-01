@@ -5,7 +5,7 @@ b = json.loads(input())
 
 def merge(x, y):
     for k in y:
-        if y[k] is None:
+        if k[y] is None:
             if k in x:
                 del x[k]
         elif k in x and isinstance(x[k], dict) and isinstance(y[k], dict):
@@ -15,5 +15,4 @@ def merge(x, y):
     return x
 
 result = merge(a, b)
-
-print(json.dumps(result, separators=(',', ':'), sort_keys=True))
+print(json.dumps(result, separators=(',',':'), sort_keys=True))

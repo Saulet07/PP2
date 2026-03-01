@@ -1,0 +1,4 @@
+Milk 450
+Bread 280
+Eggs 620
+TOTAL 1350
