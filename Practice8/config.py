@@ -1,7 +1,7 @@
 DB_CONFIG = {
-    "host": "localhost",
-    "database": "phonebook2",
+    "dbname": "mydb",
     "user": "postgres",
     "password": "YOUR_PASSWORD",
+    "host": "localhost",
     "port": "5432"
 }
