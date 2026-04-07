@@ -44,7 +44,6 @@ def delete():
     conn.close()
 
 
-# 🔥 PAGINATION
 def pagination():
     limit = int(input("Limit: "))
     offset = int(input("Offset: "))
@@ -61,8 +60,6 @@ def pagination():
     cur.close()
     conn.close()
 
-
-# 🔥 MAIN MENU
 while True:
     print("\n===== PHONEBOOK =====")
     print("1. Insert/Update")
@@ -82,7 +79,7 @@ while True:
     elif choice == "4":
         pagination()
     elif choice == "5":
-        print("Goodbye 👋")
+        print("Goodbye")
         break
     else:
-        print("Invalid choice ❌")
+        print("Invalid choice")
