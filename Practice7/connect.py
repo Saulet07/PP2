@@ -1,35 +1,46 @@
 import psycopg2
 import csv
+import os
 from config import DB_CONFIG
 
-def connect():
-    return psycopg2.connect(**DB_CONFIG)
+def connect_and_insert():
+    try:
+        print("Connecting to database...")
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        print("Connected successfully!")
 
-conn = connect()
-cur = conn.cursor()
+        # Очистка
+        cur.execute("DELETE FROM contacts")
+        conn.commit()
 
-cur.execute("DELETE FROM contacts")
-conn.commit()
+        # Путь к файлу
+        file_path = os.path.join(os.path.dirname(__file__), "contacts.csv")
+        
+        if not os.path.exists(file_path):
+            print(f"ERROR: File not found at {file_path}")
+            return
 
-with open("/Users/akhmetsaulet/Desktop/PP2/Practice7/contacts.csv", "r") as file:
-    reader = csv.reader(file)
+        with open(file_path, "r") as file:
+            reader = csv.reader(file)
+            next(reader, None)  # Пропуск заголовка
+            
+            count = 0
+            for row in reader:
+                print(f"Inserting: {row}")
+                cur.execute(
+                    "INSERT INTO contacts (name, phone) VALUES (%s, %s)",
+                    (row[0], row[1])
+                )
+                count += 1
+            
+            print(f"Total rows inserted: {count}")
 
-    next(reader, None)
+        conn.commit()
+        cur.close()
+        conn.close()
 
-    for row in reader:
-        cur.execute(
-            "INSERT INTO contacts (name, phone) VALUES (%s, %s)",
-            (row[0], row[1])
-        )
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
 
-conn.commit()
-print("Data inserted!")
-
-cur.execute("SELECT * FROM contacts")
-rows = cur.fetchall()
-
-for row in rows:
-    print(row)
-
-cur.close()
-conn.close()
+connect_and_insert()
