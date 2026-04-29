@@ -1,0 +1,6 @@
+name,phone,type,email,birthday,group
+Alice Ivanova,+7 701 111 2233,mobile,alice@gmail.com,1995-03-14,Friend
+Bob Smith,+7 702 444 5566,work,bob@work.com,1988-07-22,Work
+Carol Lee,+7 703 777 8899,home,carol@gmail.com,2000-11-01,Family
+Dave Brown,+7 704 000 1122,mobile,dave@yahoo.com,,Other
+Alice Ivanova,+7 701 999 0011,home,alice@gmail.com,1995-03-14,Friend
