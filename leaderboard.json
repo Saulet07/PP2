@@ -1,6 +1,11 @@
 [
   {
     "name": "saulet",
+    "score": 831,
+    "distance": 831
+  },
+  {
+    "name": "saulet",
     "score": 796,
     "distance": 796
   },
@@ -16,7 +21,22 @@
   },
   {
     "name": "saulet",
+    "score": 222,
+    "distance": 222
+  },
+  {
+    "name": "saulet",
+    "score": 162,
+    "distance": 162
+  },
+  {
+    "name": "saulet",
     "score": 90,
     "distance": 90
+  },
+  {
+    "name": "saulet",
+    "score": 57,
+    "distance": 57
   }
 ]
