@@ -9,6 +9,4 @@ for _ in range(n):
 print(len(ans))
 for x in ans:
     print(x)
-    
-
 

@@ -1,4 +1,4 @@
 n = int(input())
-s = input().split()
+s = list(map(int, input().split()))
 
 print(*s[::2])

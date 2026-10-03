@@ -1,3 +1,7 @@
+
+
+
+
 T = int(input())
 for _ in range(T):
     N = int(input())
@@ -17,5 +21,3 @@ for _ in range(T):
         else:
             ans.append("-1")
     print(*ans)
-    
-    
