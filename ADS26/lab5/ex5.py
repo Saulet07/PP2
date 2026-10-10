@@ -1,10 +1,14 @@
+import heapq
 n, k = map(int, input().split())
-sum = 0
+h = []
+total = 0
 for _ in range(n):
-    x = input().split()
-    y = x[0].strip()
-    if y == 'insert':
-        sum += int(x[1])
+    command = input().split()
+    if command[0] == "insert":
+        x = int(command[1])
+        heapq.heappush(h, x)
+        total += x
+        if len(h) > k:
+            total -= heapq.heappop(h)
     else:
-        print(sum)
-
+        print(total)
